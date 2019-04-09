@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Research SEO",
+  "short_name": "大和",
+  "description": "SEOに関するタグを検知、参照するツール",
+  "browser_action": {
+    "default_title": "大和",
+    "default_popup": "popup.html",
+    "default_icon" : "icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts":[
+    {
+      "matches":["https://*/*","http://*/*"],
+      "js":[
+       "jquery.min.js",
+       "script.js"
+      ]
+    }
+  ],
+  "icons" : {
+     "128": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "*://*/*/",
+    "webRequest",
+    "tabs"
+  ]
+}
